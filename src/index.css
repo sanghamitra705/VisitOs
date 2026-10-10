@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-navy: #10243E;
+    --dark-navy: #0B1F38;
+    --royal-blue: #1769D2;
+    --bright-blue: #1688E8;
+    --teal: #16A6A1;
+    --security-green: #27B36A;
+    --light-blue-bg: #EDF6FC;
+    --pale-blue: #F3F9FD;
+    --white: #FFFFFF;
+    --main-text: #14263D;
+    --secondary-text: #5F7185;
+    --border-color: #DCE6EF;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--pale-blue);
+    color: var(--main-text);
+    overflow-x: hidden;
+    margin: 0;
+    min-width: 320px;
+  }
+
+  section {
+    scroll-margin-top: 5.5rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-navy);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Reduced Motion for Complete Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Brand Gradients */
+.gradient-brand {
+  background: linear-gradient(135deg, #1769D2 0%, #16A6A1 50%, #27B36A 100%);
+}
+
+.gradient-brand-subtle {
+  background: linear-gradient(135deg, rgba(23, 105, 210, 0.08) 0%, rgba(22, 166, 161, 0.08) 50%, rgba(39, 179, 106, 0.08) 100%);
+}
+
+.brand-btn-gradient {
+  background: linear-gradient(110deg, #1769D2 0%, #1688E8 40%, #16A6A1 72%, #27B36A 100%);
+  background-size: 200% auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-btn-gradient:hover {
+  background: #FFFFFF !important;
+  color: #1769D2 !important;
+}
+
+.gradient-hero-bg {
+  background: radial-gradient(circle at 80% 20%, rgba(22, 136, 232, 0.12) 0%, rgba(237, 246, 252, 0.95) 60%, #F3F9FD 100%);
+}
+
+/* Subtle Geometric Pattern */
+.pattern-dots {
+  background-image: radial-gradient(#DCE6EF 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(220, 230, 239, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(220, 230, 239, 0.6) 1px, transparent 1px);
+}
+
+/* ============================================================ */
+/* DIRECTIONAL FILL CARDS & HOVER PHYSICS                      */
+/* ============================================================ */
+
+.zoho-card-subtle {
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid #DCE6EF;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease;
+}
+
+.zoho-card-subtle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #EDF6FC 0%, #E7F8F5 55%, #EAF8EF 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.zoho-card-subtle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(23, 105, 210, 0.10);
+  border-color: rgba(22, 166, 161, 0.5);
+}
+
+.zoho-card-subtle:hover::before {
+  transform: scaleX(1);
+}
+
+.zoho-card-subtle > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #EDF6FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #B9D0E4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1769D2;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Brand Gradients -->
+    <linearGradient id="shieldGrad" x1="120" y1="60" x2="380" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#1769D2" />
+      <stop offset="45%" stopColor="#1688E8" />
+      <stop offset="75%" stopColor="#16A6A1" />
+      <stop offset="100%" stopColor="#27B36A" />
+    </linearGradient>
+
+    <linearGradient id="swooshGrad" x1="100" y1="280" x2="400" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#10243E" />
+      <stop offset="25%" stopColor="#1769D2" />
+      <stop offset="65%" stopColor="#16A6A1" />
+      <stop offset="100%" stopColor="#27B36A" />
+    </linearGradient>
+
+    <linearGradient id="doorGrad" x1="160" y1="110" x2="230" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#1769D2" />
+      <stop offset="100%" stopColor="#10243E" />
+    </linearGradient>
+
+    <linearGradient id="qrGrad" x1="260" y1="120" x2="340" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#1688E8" />
+      <stop offset="100%" stopColor="#16A6A1" />
+    </linearGradient>
+
+    <linearGradient id="avatarGrad" x1="200" y1="190" x2="300" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#1769D2" />
+      <stop offset="100%" stopColor="#10243E" />
+    </linearGradient>
+
+    <linearGradient id="osTextGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#1688E8" />
+      <stop offset="50%" stopColor="#16A6A1" />
+      <stop offset="100%" stopColor="#27B36A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Shield Outline with Gradient -->
+  <path d="M250 50 L375 95 V200 C375 275 320 330 250 350 C180 330 125 275 125 200 V95 Z" 
+        stroke="url(#shieldGrad)" 
+        stroke-width="16" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="#FFFFFF" />
+
+  <!-- Outer Crescent Swoosh Arc wrapping the bottom -->
+  <path d="M 100 240 C 95 320, 160 380, 250 380 C 335 380, 400 320, 400 240 C 400 310, 325 365, 250 365 C 175 365, 105 310, 100 240 Z" 
+        fill="url(#swooshGrad)" />
+
+  <!-- Open Door on Left Inside Shield -->
+  <g transform="translate(160, 115)">
+    <!-- Door Frame / Wall -->
+    <path d="M0 0 H35 V150 H0" stroke="#1769D2" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Open Door Leaf in Perspective -->
+    <path d="M35 0 L10 20 V130 L35 150 Z" fill="url(#doorGrad)" stroke="#1769D2" stroke-width="4" stroke-linejoin="round" />
+    <!-- Door Knob -->
+    <circle cx="18" cy="75" r="4.5" fill="#FFFFFF" />
+  </g>
+
+  <!-- QR Code Scanner Box on Top-Right Inside Shield -->
+  <g transform="translate(265, 125)">
+    <!-- Scanner Corner Brackets -->
+    <path d="M-6 10 V-6 H10" stroke="url(#qrGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M70 10 V-6 H54" stroke="url(#qrGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M-6 54 V70 H10" stroke="url(#qrGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M70 54 V70 H54" stroke="url(#qrGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Top-Left QR Target -->
+    <rect x="4" y="4" width="22" height="22" rx="4" fill="none" stroke="#1769D2" stroke-width="4" />
+    <rect x="9.5" y="9.5" width="11" height="11" rx="2" fill="#1769D2" />
+
+    <!-- Top-Right QR Target -->
+    <rect x="38" y="4" width="22" height="22" rx="4" fill="none" stroke="#1769D2" stroke-width="4" />
+    <rect x="43.5" y="9.5" width="11" height="11" rx="2" fill="#1769D2" />
+
+    <!-- Bottom-Left QR Target -->
+    <rect x="4" y="38" width="22" height="22" rx="4" fill="none" stroke="#1769D2" stroke-width="4" />
+    <rect x="9.5" y="43.5" width="11" height="11" rx="2" fill="#1769D2" />
+
+    <!-- Data Blocks -->
+    <rect x="38" y="38" width="8" height="8" rx="1.5" fill="#16A6A1" />
+    <rect x="52" y="38" width="8" height="8" rx="1.5" fill="#1769D2" />
+    <rect x="38" y="52" width="8" height="8" rx="1.5" fill="#27B36A" />
+    <rect x="52" y="52" width="8" height="8" rx="1.5" fill="#1688E8" />
+  </g>
+
+  <!-- Visitor Avatar in Center Bottom Inside Shield -->
+  <g transform="translate(250, 240)">
+    <!-- Head -->
+    <circle cx="0" cy="-45" r="24" fill="url(#avatarGrad)" />
+    <!-- Shoulders / Torso -->
+    <path d="M-44 50 C-44 5, -28 -12, 0 -12 C 28 -12, 44 5, 44 50 Z" fill="url(#avatarGrad)" />
+  </g>
+
+  <!-- Top-Right Verified Green Badge -->
+  <g transform="translate(345, 90)">
+    <circle cx="0" cy="0" r="28" fill="#27B36A" stroke="#FFFFFF" stroke-width="6" />
+    <path d="M-12 0 L-3 9 L13 -7" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Text: VisitOS -->
+  <text x="50" y="445" font-family="system-ui, -apple-system, 'Inter', 'Segoe UI', sans-serif" font-size="88" font-weight="900" letter-spacing="-2">
+    <tspan fill="#10243E">Visit</tspan>
+    <tspan fill="url(#osTextGrad)">OS</tspan>
+  </text>
+</svg>
